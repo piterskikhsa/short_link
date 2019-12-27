@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <section class="main_section">
+        <div class="container">
+            <form action="" method="post" class="link_create_form">
+                {% csrf_token %}
+                {% for field in form %}
+                     <div class="form_group">
+                       {{ field.errors }}
+                       {{ field }}
+                     </div>
+                {% endfor %}
+                 <input class="btn link_btn" type="submit" name="action" value="Укоротить">
+            </form>
+            <div class="history_links">
+                <ul class="history_links_list">
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+.block {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #283593;
+
+}
+button {
+    background-color: transparent;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.btn-secondary {
+    background-color: #eaeef8;
+    color: #2a5bd7;
+}
+
+.btn-secondary:hover {
+    background-color: #cedafa;
+}
+
+.success {
+    background-color: #33691e;
+    color: #fff;
+}
+
+.success:hover {
+    background-color: #33691e;
+    color: #fff;
+}
+
+
+.main_section {
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.link_create_form {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.form_group {
+    display: inline-block;
+    width: 80%;
+    margin-right: 2%;
+}
+
+.form_group input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+.form_group .helper-text, .form_group label {
+    position: absolute;
+}
+
+.form_group label {
+
+}
+
+.link_btn {
+    background-color: #1565c0;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    width: 17%;
+}
+.link_btn:hover {
+    background-color: #1e88e5;
+}
+.history_links {
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+
+.history_links_list {
+    padding: 0 10px;
+}
+.link {
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #aad1d7;
+    align-items: center;
+}
+
+.link:last-of-type {
+    border: none;
+}
+
+.short-link {
+    margin-right: 20px;
+}
+.short-link a {
+    text-decoration: none;
+
+}
+
+.history_links_list .link span {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+}
