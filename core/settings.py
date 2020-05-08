@@ -144,3 +144,16 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost",
     "http://127.0.0.1",
 ]
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = '6379'
+BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+
+CELERY_BROKER_URL = BROKER_URL
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
+CELERYD_MAX_TASKS_PER_CHILD = 100
