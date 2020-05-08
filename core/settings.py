@@ -29,9 +29,16 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+WEB_SCHEMA = os.getenv("WEB_SCHEMA")
+WEB_HOST = os.getenv("WEB_HOST")
+WEB_PORT = os.getenv("WEB_PORT")
 
+WEB = f'{WEB_SCHEMA}://{WEB_HOST}{WEB_PORT}'
 
+ALLOWED_HOSTS = ['45.145.0.68', '127.0.0.1']
+
+if WEB_HOST not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append(WEB_HOST)
 # Application definition
 
 INSTALLED_APPS = [
@@ -126,7 +133,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+MEDIA_ROOT = os.getenv("MEDIA_ROOT")
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.getenv('STATIC_ROOT')
 STATIC_URL = '/static/'
+
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost",

@@ -1,0 +1,24 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name _;
+
+    root /var/www/html;
+
+    location / {
+      try_files $uri @proxy_to_app;
+    }
+
+    location @proxy_to_app {
+      proxy_set_header X-Forwarded-Host $server_name;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header Host $http_host;
+      proxy_pass http://127.0.0.1:8001;
+    }
+
+#    error_page 500 502 503 504 /500.html;
+#    location = /500.html {
+#      root /path/to/app/current/public;
+#    }
+}
